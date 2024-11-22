@@ -6,7 +6,7 @@
 /*   By: irfei <irfei@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 19:52:15 by irfei             #+#    #+#             */
-/*   Updated: 2024/11/22 15:38:44 by irfei            ###   ########.fr       */
+/*   Updated: 2024/11/22 21:20:44 by irfei            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	f(const char *format, va_list args, int *i, int *char_count)
 		else if (format[*i] == 'X')
 			*char_count += ft_putnbr_hex_upper(va_arg(args, unsigned int));
 		else if (format[*i] == 'p')
-			*char_count += ft_putptr(va_arg(args, void *));
+			*char_count += ft_putstr("0x") + ft_putptr(va_arg(args, void *));
 		else if (format[*i] == '%')
 			*char_count += ft_putpercent();
 	}
@@ -38,12 +38,14 @@ void	f(const char *format, va_list args, int *i, int *char_count)
 
 int	ft_printf(const char *format, ...)
 {
-	va_list args;
-	int i;
-	int char_count;
+	va_list	args;
+	int		i;
+	int		char_count;
 
 	i = 0;
 	char_count = 0;
+	if (!format || write(1, NULL, 0) == -1)
+		return (-1);
 	va_start(args, format);
 	while (format[i])
 	{
@@ -55,12 +57,6 @@ int	ft_printf(const char *format, ...)
 		else
 			char_count += ft_putchar(format[i++]);
 		va_end(args);
-		
 	}
 	return (char_count);
 }
-	int main(void)
-	{
-		ft_printf("Hello, %s! You are %d years old.", "Alice", 30);
-		return (0);
-	}

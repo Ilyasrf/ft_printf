@@ -1,6 +1,6 @@
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
-NAME	= ft_printf.a
+NAME	=  libftprintf.a
 HEADER	= ft_printf.h
 
 SRCS    = ft_putstr.c ft_putchar.c ft_putnbr.c ft_printf.c ft_putnbr_hex.c\
@@ -20,11 +20,11 @@ $(NAME): $(OBJS)
 
 all: $(NAME)
 
-bonus: ${BONUS_OBJS}
-	ar rcs ${NAME} ${BONUS_OBJS}
+# bonus: ${BONUS_OBJS}
+# 	ar rcs ${NAME} ${BONUS_OBJS}
 
 clean:
-	rm -f $(OBJS) $(BONUS_OBJS)
+	rm -f $(OBJS) 
 
 fclean: clean
 	rm -f $(NAME)

@@ -6,12 +6,13 @@
 /*   By: irfei <irfei@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 13:01:24 by irfei             #+#    #+#             */
-/*   Updated: 2024/11/21 21:36:56 by irfei            ###   ########.fr       */
+/*   Updated: 2024/11/22 21:25:05 by irfei            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-int ft_putpercent(void)
+
+int	ft_putpercent(void)
 {
-	return ft_putchar('%');
+	return (ft_putchar('%'));
 }
