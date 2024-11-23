@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: irfei <irfei@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/21 11:41:34 by irfei             #+#    #+#             */
-/*   Updated: 2024/11/23 17:19:49 by irfei            ###   ########.fr       */
+/*   Created: 2024/11/23 13:20:23 by irfei             #+#    #+#             */
+/*   Updated: 2024/11/23 17:05:42 by irfei            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_bonus.h"
 
-int	ft_putstr(const char *str)
+int	ft_putchar_bonus(char c)
 {
-	int	char_count;
-
-	char_count = 0;
-	if (!str)
-		str = "(null)";
-	while (*str)
-	{
-		char_count += write(1, str, 1);
-		str++;
-	}
-	return (char_count);
+	write(1, &c, 1);
+	return (1);
 }

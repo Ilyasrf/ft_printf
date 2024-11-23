@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_hex_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: irfei <irfei@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/21 11:41:34 by irfei             #+#    #+#             */
-/*   Updated: 2024/11/23 17:19:49 by irfei            ###   ########.fr       */
+/*   Created: 2024/11/23 13:47:44 by irfei             #+#    #+#             */
+/*   Updated: 2024/11/23 15:48:16 by irfei            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_bonus.h"
 
-int	ft_putstr(const char *str)
+int	putnbr_hex_bonus(unsigned int nb)
 {
-	int	char_count;
-
+	int char_count;
+	char *hex;
 	char_count = 0;
-	if (!str)
-		str = "(null)";
-	while (*str)
-	{
-		char_count += write(1, str, 1);
-		str++;
-	}
+	hex = "0123456789abcdef";
+	if (nb >= 16)
+		char_count += ft_putnbr_hex_bonus(nb / 16);
+	char_count += ft_putnbr_hex_bonus(nb % 16 + '0');
 	return (char_count);
 }
