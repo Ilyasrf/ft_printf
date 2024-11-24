@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_putnbr_unsigned_bonus.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: irfei <irfei@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/24 15:46:41 by irfei             #+#    #+#             */
-/*   Updated: 2024/11/24 16:30:36 by irfei            ###   ########.fr       */
+/*   Created: 2024/11/24 12:32:32 by irfei             #+#    #+#             */
+/*   Updated: 2024/11/24 15:41:40 by irfei            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_bonus.h"
-void f(const char format_char, va_list args, int *char_count)
+
+int	ft_putnbr_unsigned_bonus(unsigned int nb)
 {
-	if (format_char == 'c')
-		*char_count += ft_putchar_bonus(va_arg(args, int));
-	else if (format_char == 's')
-		*char_count += ft_putstr_bonus(va_arg(args, char*));
-	else if (format_char == 'd')
-		
+	int	char_count;
+
+	char_count = 0;
+	if (nb >= 10)
+		char_count += ft_putnbr_unsigned_bonus(nb / 10);
+	char_count += ft_putchar_bonus(nb % 10 + '0');
+	return (char_count);
 }
