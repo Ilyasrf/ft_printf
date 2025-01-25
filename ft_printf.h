@@ -6,7 +6,7 @@
 /*   By: irfei <irfei@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 13:11:12 by irfei             #+#    #+#             */
-/*   Updated: 2025/01/14 19:41:21 by irfei            ###   ########.fr       */
+/*   Updated: 2025/01/25 15:49:13 by irfei            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_putnbr(int nb);
 int	ft_putstr(const char *str);
 int	ft_putnbr_unsigned(unsigned int nb);
 int	ft_putnbr_hex(unsigned int nb);
-int    ft_putptr(unsigned long n);
+int	ft_putptr(unsigned long n);
 int	ft_putpercent(void);
 int	ft_putnbr_hex_upper(unsigned int nb);
 #endif

@@ -6,7 +6,7 @@
 /*   By: irfei <irfei@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 19:52:15 by irfei             #+#    #+#             */
-/*   Updated: 2024/11/26 12:41:09 by irfei            ###   ########.fr       */
+/*   Updated: 2025/01/25 16:23:16 by irfei            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ int	ft_printf(const char *format, ...)
 
 	i = 0;
 	char_count = 0;
-
 	va_start(args, format);
 	while (format[i])
 	{
