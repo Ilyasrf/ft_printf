@@ -122,6 +122,54 @@ int main(void) {
 
 ---
 
+## 📘 Understanding ft_printf Syntax
+
+### 📌 Variadic Functions
+- `va_list` – Used to hold information about variable arguments.
+- `va_start` – Initializes `va_list`.
+- `va_arg` – Retrieves the next argument.
+- `va_end` – Cleans up `va_list`.
+
+Example:
+```c
+#include <stdarg.h>
+#include <stdio.h>
+
+void print_numbers(int count, ...) {
+    va_list args;
+    va_start(args, count);
+    for (int i = 0; i < count; i++) {
+        printf("%d ", va_arg(args, int));
+    }
+    va_end(args);
+    printf("\n");
+}
+
+int main() {
+    print_numbers(3, 10, 20, 30);
+    return 0;
+}
+```
+
+### 📌 Formatting Example
+- `%d`: Prints an integer.
+- `%s`: Prints a string.
+- `%p`: Prints a pointer address.
+
+Example:
+```c
+ft_printf("Name: %s, Age: %d, Address: %p\n", "John", 25, &main);
+```
+
+---
+
+## 🔍 Debugging Tips
+- Compare outputs with `printf()`.
+- Handle edge cases (`NULL` pointers, empty strings, large numbers).
+- Use `write(1, &char, 1);` to debug character output.
+
+---
+
 ## 🎓 Learning Outcomes
 This project enhances knowledge in:
 - Implementing variadic functions
